@@ -3,6 +3,7 @@ package com.example.reto1
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.SeekBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -50,8 +51,23 @@ class MainActivity : AppCompatActivity() {
         val btnGuardar = findViewById<Button>(R.id.btnGuardar)
         val txtResultado = findViewById<TextView>(R.id.txtResultado)
 
+
+        val seekNivel = findViewById<SeekBar>(R.id.seekNivel)
+        val txtNivel = findViewById<TextView>(R.id.txtNivel)
+
+        seekNivel.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                txtNivel.text = "Nivel seleccionado: $progress"
+            }
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
         btnGuardar.setOnClickListener {
             val resultado = """
+                
+                Nivel seleccionado:
+                ${txtNivel.text}
                 Tecnologías seleccionadas:
                 
                 Android: ${if (cbAndroid.isChecked) "Seleccionado" else "No seleccionado"}
