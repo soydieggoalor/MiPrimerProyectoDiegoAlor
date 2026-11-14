@@ -46,6 +46,21 @@ class MainActivity : AppCompatActivity() {
                 println("Flutter desmarcado")
             }
         }
-    }
 
+        val btnGuardar = findViewById<Button>(R.id.btnGuardar)
+        val txtResultado = findViewById<TextView>(R.id.txtResultado)
+
+        btnGuardar.setOnClickListener {
+            val resultado = """
+                Tecnologías seleccionadas:
+                
+                Android: ${if (cbAndroid.isChecked) "Seleccionado" else "No seleccionado"}
+                React: ${if (cbReact.isChecked) "Seleccionado" else "No seleccionado"}
+                Flutter: ${if (cbFlutter.isChecked) "Seleccionado" else "No seleccionado"}
+            """.trimIndent()
+
+            txtResultado.text = resultado
+        }
+
+    }
 }
