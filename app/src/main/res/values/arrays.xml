@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cursos">
+        <item>1ª DAM</item>
+        <item>2ª DAM</item>
+    </string-array>
+</resources>
