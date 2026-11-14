@@ -1,6 +1,9 @@
 package com.example.reto1
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,5 +19,33 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val cbAndroid = findViewById<CheckBox>(R.id.cbAndroid)
+        val cbReact = findViewById<CheckBox>(R.id.cbReact)
+        val cbFlutter = findViewById<CheckBox>(R.id.cbFlutter)
+
+        cbAndroid.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                println("Android seleccionado")
+            } else {
+                println("Android desmarcado")
+            }
+        }
+
+        cbReact.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                println("React Seleccionado")
+            } else {
+                println("React desmarcado")
+            }
+        }
+
+        cbFlutter.setOnCheckedChangeListener{_, isChecked ->
+            if (isChecked) {
+                println("Flutter seleccionado")
+            } else {
+                println("Flutter desmarcado")
+            }
+        }
     }
+
 }
